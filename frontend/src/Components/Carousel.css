@@ -1,0 +1,21 @@
+ul {
+  display:flex;
+  flex-direction: column;
+  height: 350px;
+  padding-bottom: 0px;
+  
+  list-style: none;
+}
+
+li {
+margin: 10px;
+}
+
+li p {
+word-wrap: break-word;
+}
+
+img {
+  height: 150px;
+}
+

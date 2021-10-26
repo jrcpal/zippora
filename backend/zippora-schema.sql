@@ -1,0 +1,8 @@
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(25) NOT NULL,
+  password TEXT NOT NULL,
+  is_new BOOLEAN NOT NULL DEFAULT false,
+  is_organic BOOLEAN NOT NULL DEFAULT 'f',
+  on_sale BOOLEAN NOT NULL DEFAULT 'f'
+);
