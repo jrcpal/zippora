@@ -1,5 +1,6 @@
 "use strict";
 
+const express = require('express');
 const app = require("./app.js");
 const { PORT } = require("./config");
 app.use(express.static("../frontend/build/index.html"))
