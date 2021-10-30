@@ -1,7 +1,7 @@
 "use strict";
 
 /** Express app for zippora. */
-
+const path = require('path')
 const express = require("express");
 const cors = require("cors");
 
@@ -23,6 +23,11 @@ app.use(authenticateJWT);
 app.use("/auth", authRoutes);
 app.use("/users", usersRoutes);
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/build")))
+} else {app.get("/", (req, res) => {
+  res.send("API running")
+})}
 
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {
