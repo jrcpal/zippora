@@ -1,6 +1,6 @@
 import './App.css';
 
-import { BrowserRouter, Redirect } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import jsonwebtoken from "jsonwebtoken";

@@ -24,9 +24,10 @@ app.use("/auth", authRoutes);
 app.use("/users", usersRoutes);
 
 //pass in array of paths 
-const paths = ["/products"]
-app.get(paths, (req, res) => {
-  res.redirect("/")
+const paths = ["/products", "/profile", "/login", "signup"]
+app.get(paths, (req, res, next) => {
+  next()
+  //res.redirect("/")
 })
 
 if (process.env.NODE_ENV === "production") {
