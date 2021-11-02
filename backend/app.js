@@ -23,11 +23,18 @@ app.use(authenticateJWT);
 app.use("/auth", authRoutes);
 app.use("/users", usersRoutes);
 
+//pass in array of paths 
+const paths = ["/products"]
+app.get(paths, (req, res) => {
+  res.redirect("/")
+})
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/build")))
 } else {app.get("/", (req, res) => {
   res.send("API running")
 })}
+
 
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {
