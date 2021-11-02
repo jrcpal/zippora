@@ -1,6 +1,6 @@
 import './App.css';
 
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Redirect } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import jsonwebtoken from "jsonwebtoken";
@@ -87,6 +87,7 @@ function App() {
     const user = await DatabaseApi.updateUser(updateData);
     setCurrentUser(user);
     //history.push("/");
+
   }
 
   return (
